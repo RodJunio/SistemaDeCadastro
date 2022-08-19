@@ -6,8 +6,8 @@ namespace SistemaDeCadastro
     class Program
     {
         static void Main(string[] agrs)
-        {            
-            
+        {
+            List<Cliente> Listaclientes = new List<Cliente>();
             while (true)
             {
                 Console.WriteLine(@"Digite: Escola uma opção abaixo
@@ -18,7 +18,7 @@ namespace SistemaDeCadastro
                 int opcaoCadastro = int.Parse(Console.ReadLine());
 
 
-                List<Cliente> Listaclientes = new List<Cliente>();
+                
 
 
                 if (opcaoCadastro == 1) {
@@ -38,14 +38,15 @@ namespace SistemaDeCadastro
                 } 
                 else if (opcaoCadastro == 2)
                 {
+                    
                     foreach (Cliente cliente in Listaclientes)
-                    {
+                    {                        
                         Console.WriteLine("\nLISTA DE CLENTES CADASTRADOS:");
                         Console.WriteLine("\n=============================================\n");
-                        //Console.WriteLine(clientes[].Nome);
-                        //Console.WriteLine(clientes[].Telefone);
-                        //Console.WriteLine(clientes[].Email);
+                        
                         Console.WriteLine(cliente.Nome);
+                        Console.WriteLine(cliente.Telefone);
+                        Console.WriteLine(cliente.Email);
                         Console.WriteLine("\n=============================================");
                     }
                 } 
