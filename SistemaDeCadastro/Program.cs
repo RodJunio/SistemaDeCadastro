@@ -15,10 +15,7 @@ namespace SistemaDeCadastro
                 2 - Listar clientes
                 0 - Sair do sistema");
 
-                int opcaoCadastro = int.Parse(Console.ReadLine());
-
-
-                
+                int opcaoCadastro = int.Parse(Console.ReadLine());              
 
 
                 if (opcaoCadastro == 1) {
