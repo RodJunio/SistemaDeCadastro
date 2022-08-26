@@ -21,5 +21,32 @@ namespace SistemaDeCadastro
             this.Telefone = telefone;
             this.Email = email;
         } 
+        public void Salvar()
+        {
+            Cliente.SalvarClientes(this);
+        }
+        public static List<Cliente> BancoDeClienteCadastrados = new List<Cliente>();
+        public static List<Cliente> Todas()
+        {
+            return Cliente.BancoDeClienteCadastrados;
+        }
+
+        public static void SalvarClientes(Cliente obj)
+        {
+            Cliente.BancoDeClienteCadastrados.Add(obj);
+        }
+
+        //public static List<Cliente> BuscaPorNome(string nome)
+        //{
+        //    var novaLista = new List<Cliente>();
+        //    foreach(Cliente instancia in BancoDeClienteCadastrados)
+        //    {
+        //        if(instancia.Nome.Contains(nome))
+        //        {
+        //            novaLista.Add(instancia);
+        //        }
+        //        return novaLista;
+        //    }
+        //}
     }
 }

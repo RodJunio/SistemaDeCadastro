@@ -7,7 +7,7 @@ namespace SistemaDeCadastro
     {
         static void Main(string[] agrs)
         {
-            List<Cliente> Listaclientes = new List<Cliente>();
+            //List<Cliente> Listaclientes = new List<Cliente>();
             while (true)
             {
                 Console.WriteLine(@"Digite: Escola uma opção abaixo
@@ -30,24 +30,33 @@ namespace SistemaDeCadastro
                         string Telefone = Console.ReadLine();
                         Console.WriteLine("Digite seu Email:");
                         string Email = Console.ReadLine();
-                        Cliente clientePadrao = new Cliente(Nome, Telefone, Email); 
-                        Listaclientes.Add(clientePadrao);
+                        new Cliente(Nome, Telefone, Email).Salvar(); 
+                        //Listaclientes.Add(clientePadrao);
                     }
                 } 
                 else if (opcaoCadastro == 2)
                 {
-                    
-                    foreach (Cliente cliente in Listaclientes)
-                    {                        
+
+                    foreach (Cliente cliente in Cliente.BancoDeClienteCadastrados)
+                    {
                         Console.WriteLine("\nLISTA DE CLENTES CADASTRADOS:");
                         Console.WriteLine("\n=============================================\n");
-                        
+
                         Console.WriteLine(cliente.Nome);
                         Console.WriteLine(cliente.Telefone);
                         Console.WriteLine(cliente.Email);
+
+
                         Console.WriteLine("\n=============================================");
                     }
                 } 
+                 /*else if( opcaoCadastro == 3)
+                {
+                    Console.WriteLine("Escolha qual Cliente será deletado da lista:");
+                    int numOpcao = Parse.Int(Console.ReadLine());
+                    Cliente.BancoDeClienteCadastrados.Remove(Cliente.BancoDeClienteCadastrados[numOpcao]);
+
+                }*/
                 else if (opcaoCadastro == 0)
                 {
 
